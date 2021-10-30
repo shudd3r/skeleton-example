@@ -13,5 +13,6 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "shudd3r/skeletons": "@dev"
-    }
+    },
+    "bin": ["shudd3r-skeleton"]
 }
