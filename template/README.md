@@ -5,7 +5,13 @@
 [![PHP version](https://img.shields.io/packagist/php-v/{package.name}.svg)](https://packagist.org/packages/{package.name})
 [![LICENSE](https://img.shields.io/github/license/{repository.name}.svg?color=blue)](LICENSE)
 ### {package.description}
-
+{original.content>>>More about package...<<<original.content}
+### Installation with [Composer](https://getcomposer.org/)
+```bash
+composer require {package.name}
+```
+{original.content}
+### Basic Usage
 {original.content>>>Your content here...<<<original.content}
 
 copyright (c) 2021
