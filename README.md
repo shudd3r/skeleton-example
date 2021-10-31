@@ -8,17 +8,19 @@ Skeleton package built to show how it can be managed by script
 built with [**shudd3r/skeletons**](https://github.com/shudd3r/skeletons)
 library.
 
+### Installation
+Install with [Composer](https://getcomposer.org/) as dev dependency of your project:
+```bash
+composer require --dev shudd3r/skeleton-example
+```
+
 ### Basic Usage
-- Install skeleton package as dev dependency for your project:
-  ```bash
-  composer require --dev shudd3r/skeleton-example @dev
-  ```
 - Initialize package with skeleton files providing template
   replacement values through interactive shell:
   ```bash
   vendor/bin/shudd3r-skeleton -i init
   ```
-- Validate project synchronization with skeleton (can be added to CI workflow):
+- Validate project's consistency with skeleton (can be added to CI workflow):
   ```bash
   vendor/bin/shudd3r-skeleton check
   ```
