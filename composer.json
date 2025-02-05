@@ -1,0 +1,18 @@
+{
+    "name": "shudd3r/skeleton-example",
+    "description": "Package skeleton demo using Shudd3r/Skeletons",
+    "type": "dev-tool",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shudd3r",
+            "email": "q3.shudder@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "shudd3r/skeletons": "^1.0.0"
+    },
+    "bin": ["example-skeleton"]
+}
