@@ -1,29 +1,15 @@
-# Username/My-Package-Skeleton
-[![Latest Stable Version](https://poser.pugx.org/shudd3r/skeletons/version)](https://packagist.org/packages/shudd3r/skeletons)
-[![PHP version](https://img.shields.io/packagist/php-v/shudd3r/skeletons.svg)](https://packagist.org/packages/shudd3r/skeletons)
-[![LICENSE](https://img.shields.io/github/license/shudd3r/skeletons.svg?color=blue)](../LICENSE)
-### Example skeleton package using Shudd3r/Skeletons
+# Shudd3r/Skeleton-Example
+[![Latest Stable Version](https://poser.pugx.org/shudd3r/skeleton-example/version)](https://packagist.org/packages/shudd3r/skeleton-example)
+[![PHP version](https://img.shields.io/packagist/php-v/shudd3r/skeleton-example.svg)](https://packagist.org/packages/shudd3r/skeleton-example)
+[![LICENSE](https://img.shields.io/github/license/shudd3r/skeleton-example.svg?color=blue)](LICENSE)
+### Package skeleton demo using [*Shudd3r/Skeletons*](https://github.com/shudd3r/skeletons)
 
-Skeleton package built to illustrate how it can be managed by script
-that uses **shudd3r/skeletons** library.
-
-> :warning: **Commands below will not work** - it's just a mock up that
-> reflects configuration used in example [`composer.json`](composer.json)
-> file as if this directory was a standalone package.
->
-> However, you can download this package and run the `example-skeleton`
-> script from root directory of a test package to try out building project
-> with dedicated skeleton script. You could also run it as package's own
-> dependency - for example:
-> ```bash
-> composer require --dev shudd3r/skeletons
-> vendor/shudd3r/skeletons/example/example-skeletons init
-> ```
+Skeleton package built to illustrate how it can be managed by script that uses **shudd3r/skeletons** library.
 
 ### Installation
-Install with [Composer](https://getcomposer.org/) as dev dependency of your project:
+Install with [*Composer*](https://getcomposer.org/) as dev dependency of your project:
 ```bash
-composer require --dev username/my-package-skeleton
+composer require --dev shudd3r/skeleton-example
 ```
 
 ### Basic Usage
