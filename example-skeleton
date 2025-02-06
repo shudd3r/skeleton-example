@@ -2,7 +2,7 @@
 <?php declare(strict_types=1);
 
 /*
- * This file is part of Shudd3r/Skeletons package.
+ * This file is part of Shudd3r/Skeleton-Example package.
  *
  * (c) Shudd3r <q3.shudder@gmail.com>
  *
@@ -20,16 +20,8 @@ use Shudd3r\Skeletons\Templates\Template;
 // This script should be executed from package root directory
 $rootDirectory = getcwd();
 
-// Autoload from Composer vendor/bin executable or simplified demo callback
-if (isset($GLOBALS['_composer_autoload_file'])) {
-    require_once $GLOBALS['_composer_autoload_path'];
-} else {
-    spl_autoload_register(function (string $classname): void {
-        if (strpos($classname, __NAMESPACE__) !== 0) { return; }
-        $classFile = '/src/' . substr($classname, strlen(__NAMESPACE__) + 1) . '.php';
-        require_once dirname(__DIR__) . str_replace('\\', DIRECTORY_SEPARATOR, $classFile);
-    });
-}
+// Autoload defined in Composer's vendor/bin executable or direct standalone build access
+require_once $GLOBALS['_composer_autoload_path'] ?? __DIR__ . '/vendor/autoload.php';
 
 $args = new InputArgs($argv ?? []);
 
