@@ -18,15 +18,34 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
+      - name: "Install PHP 8.0"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+          coverage: none
+          ini-values: phar.readonly=Off, error_reporting=-1, display_errors=On
+
+      - name: "Install Composer dependencies"
+        uses: ramsey/composer-install@v2
+        with:
+          dependency-versions: highest
+          composer-options: --prefer-stable
+          custom-cache-key: composer-${{ runner.os }}-php${{ matrix.php-versions }}-${{ hashFiles('**/composer.json') }}
+
+      - name: "Create build directory"
+        run: mkdir .build
+
       - name: "Capture tag message"
-        run: |
-          mkdir .dev
-          git tag -l --format='%(contents)' | tail +3 > .dev/tag_msg.txt
+        run: git tag -l --format='%(contents)' | tail +3 > .build/tag_msg.txt
+
+      - name: "Create PHAR archive"
+        run: php .github/build-phar.php .build/example-skeleton.phar
 
       - name: "Create release Draft"
         uses: softprops/action-gh-release@v2
         with:
           name: 'Release version ${{ github.ref_name }}'
-          body_path: '.dev/tag_msg.txt'
+          body_path: .build/tag_msg.txt
+          files: .build/example-skeleton.phar
           draft: true
           token: ${{ secrets.SHUDDER_ACTION_TOKEN }}
