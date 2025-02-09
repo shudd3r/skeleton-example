@@ -7,14 +7,15 @@
 Skeleton package built to illustrate how it can be managed by script that uses **shudd3r/skeletons** library.
 
 ### Installation
-It is recommended to use it globally as an exacutable application.
-To do that, you need to download `skeleton-example.phar` archive from the [latest release](https://github.com/shudd3r/skeleton-example/releases/latest)
-asset files and place it in one of the operating system's `PATH` directories (read [more](#windows-executable) for Windows).
+It is recommended to use it globally as an exacutable application - downloaded `example-skeleton.phar`
+archive from the [latest release](https://github.com/shudd3r/skeleton-example/releases/latest)
+asset files and placed it in one of the operating system's `PATH` directories.
+More on _Windows_ executable `.phar` files [here](#windows-executable).
 
 [![Download file](https://img.shields.io/badge/download-example--skeleton.phar-green)](https://github.com/shudd3r/skeleton-example/releases/latest/download/example-skeleton.phar)
 
 During deployment process or for a small number of projects you can install this package
-with [*Composer*](https://getcomposer.org/) as one of dev dependency:
+with [*Composer*](https://getcomposer.org/) as one of package's dev dependencies:
 ```bash
 composer require --dev shudd3r/skeleton-example
 ```
@@ -48,9 +49,17 @@ you can simply run `example-skeleton` instead of `vendor/bin/example-skeleton` i
   vendor/bin/example-skeleton sync
   ```
 
-#### Windows executable
-Windows doesn't support shebang parsing, so it will require additional `.bat` file
-to make the script executable. You can create one with the following command:
-```bash
-echo @php "%~dp0example-skeleton.phar" %* > example-skeleton.bat
-```
+### Windows executable
+To run the script globally from console with simple `example-skeleton` command:
+1. You need to place downloaded `.phar` file in one of (executable) PATH directories
+or add new one to directory list in %PATH% environment variable.
+You can change environment variables by running:
+    ```bash
+    SystemPropertiesAdvanced.exe
+    ```
+2. Windows doesn't support shebang parsing, so files that can't be executed directly
+need to be assigned to their interpreter manually. The easiest way to make concrete
+`.phar` file executable is to create `.bat` runner file with the following command:
+    ```bash
+    echo '@php "%~dp0example-skeleton.phar" %*' > example-skeleton.bat
+    ```
